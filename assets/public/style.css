@@ -1,0 +1,69 @@
+html {
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+}
+
+#root {
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+
+.home {
+	padding: 20px;
+	background: limegreen;
+}
+
+.animating {
+	background: lightsalmon;
+	position: absolute;
+}
+
+.login-form {
+	max-width: 400px;
+}
+.login-form-forgot {
+	float: right;
+}
+.login-form-button {
+	width: 100%;
+}
+.login {
+	border-radius: 5%;
+	position: relative;
+	top: 100px;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 400px;
+	margin: 0 auto 20px;
+	padding: 20px 40px 40px 40px;
+	text-align: center;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.heading {
+	padding-bottom: 20px;
+}
+
+.logo {
+	background: #ffffff;
+	text-align: center;
+	padding: 11px;
+	border: 1px solid #ececec;
+}
+
+.ant-layout-sider-zero-width-trigger{
+	top: 0!important;
+	height: 48px!important;
+	background-color: #ececec!important;
+}

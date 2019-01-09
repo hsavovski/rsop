@@ -1,0 +1,13 @@
+{
+  "port": 5050,
+  "secret":"Ad9SADfy7235faq",
+  "admin": {
+    "sessionDuration" : 10,
+    "cookieLifetime" : 10
+  },
+  "user": {
+    "sessionDuration" : 1800000,
+    "cookieLifetime" : 86400000
+  }
+
+}

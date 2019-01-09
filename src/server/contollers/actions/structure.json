@@ -1,0 +1,9 @@
+{
+    "universities":["name","abbreviation","city","type"],
+    "teams":["name","teamLeaderId","competitionId","universityId","score","solvedProblems"],
+    "competitions":["name","year","universityId","domain"],
+    "competitor_groups":["teamId","competitorId","major","course"],
+    "competitors":["name"],
+    "problems":["name","text","tests","compilationTime","solution","competitionId"],
+    "team_leaders":["name"]
+}
