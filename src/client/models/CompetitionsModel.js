@@ -46,7 +46,8 @@ class CompetitionsModel extends BaseModel
         };
 
         this.addRecord = {team: null, competitorGroup: null};
-	}
+    }
+    
 
 	get competitions()
     {

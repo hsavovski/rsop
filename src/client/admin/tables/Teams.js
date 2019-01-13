@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
-import Table from '../components/EditableTable';
+import Table from '../../components/EditableTable';
 
 import Model from '../../models/CompetitionsModel';
 import Form from '../forms/TeamForm';
@@ -19,14 +19,12 @@ export default class Teams extends Component
     }
 
     componentDidMount(){
-        Model.on('universities',this.handleChange);
         Model.on('teamLeaders',this.handleChange);
         Model.on('teams',this.handleChange);
     }
 
 
     componentWillUnmount(){
-        Model.removeListener('universities',this.handleChange);
         Model.removeListener('teamLeaders',this.handleChange);
         Model.removeListener('teams',this.handleChange);
     }
@@ -59,7 +57,12 @@ export default class Teams extends Component
     render() {
         let universities = Model["universities"];
         let teamLeaders = Model['teamLeaders'];
-
+        
+        if(Object.keys(universities).length < 1 && Object.keys(teamLeaders).length < 1)
+        {
+            return(<div></div>)
+        }
+        
         return (
             <Table
                 columns={[

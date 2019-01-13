@@ -31,6 +31,7 @@ export default class BaseModel extends EventEmitter {
             if(helper.initial != null)
             {
                 this.data[name] = helper.initial;
+                
             }
 
             if(helper.action != null)

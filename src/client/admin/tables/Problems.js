@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
-import SearchTable from '../components/EditableSearchTable';
+import SearchTable from '../../components/EditableSearchTable';
 
 import Model from '../../models/CompetitionsModel';
 import Form from '../forms/ProblemForm';
@@ -35,6 +35,12 @@ export default class Problems extends Component
 
     render() {
         let competitions = Model['competitions'];
+        
+        if(Object.keys(competitions).length < 1)
+        {
+            return(<div></div>)
+        }
+        
         return (
 			<div>
                 <Row>

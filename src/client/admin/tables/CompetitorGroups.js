@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
-import Table from '../components/EditableTable';
+import Table from '../../components/EditableTable';
 
 import Model from '../../models/CompetitionsModel';
 import Form from '../forms/TeamForm';
@@ -50,6 +50,11 @@ export default class CompetitorGroups extends Component
     render() {
 
         let competitors = Model['competitors'];
+        if(Object.keys(competitors).length < 1)
+        {
+            return(<div></div>)
+        }
+
         return (
             <Table
                 columns={[

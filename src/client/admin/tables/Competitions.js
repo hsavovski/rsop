@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
-import SearchTable from '../components/EditableSearchTable';
+import SearchTable from '../../components/EditableSearchTable';
 
 import Model from '../../models/CompetitionsModel';
 import Form from '../forms/CompetitionForm';
@@ -44,7 +44,10 @@ export default class Competitions extends Component
 
     render() {
         let universities = Model["universities"];
-        
+        if(Object.keys(universities).length < 1)
+        {
+            return(<div></div>)
+        }
         return (
 			<div>
                 <Row>
@@ -68,6 +71,8 @@ export default class Competitions extends Component
                                 </div>),
                                 editable: true,
                                 required: true,
+                                sorter: (a,b) => a.year - b.year,
+                                defaultSortOrder: 'descend',
                             },
                             {
                                 title: this.trans('host'),

@@ -117,7 +117,7 @@ module.exports = function()
             {
                 if(body[name] != null)
                 {
-                    query += " `" + name + '` = "' + body[name] + '",' 
+                    query += " `" + name + "` = '" + body[name] + "'," 
                 }
             });
 

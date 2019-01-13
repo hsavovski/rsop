@@ -67,3 +67,12 @@ body{
 	height: 48px!important;
 	background-color: #ececec!important;
 }
+
+.bodyWrap {
+	width: 85%;
+	margin: auto;
+}
+
+.gap {
+	margin-top: 40px;
+}

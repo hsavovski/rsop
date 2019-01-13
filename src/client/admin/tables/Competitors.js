@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
-import EditSearchTable from '../components/EditableSearchTable';
+import EditSearchTable from '../../components/EditableSearchTable';
 
 import Model from '../../models/CompetitionsModel';
 import Form from '../forms/CompetitorForm';

@@ -18,9 +18,10 @@ import Problems from './tables/Problems';
 
 ReactDOM.render(
     <Router>
-        <div>
+        <div className='bodyWrap'>
                 <Menu
                         mode="horizontal"
+                        size='big'
                     >
                         <Menu.Item key="home">
                             <Link to="/admin/">

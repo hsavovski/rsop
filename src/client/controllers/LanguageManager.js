@@ -1,7 +1,7 @@
 /**
  * Created by ico on 03.08.17.
  */
-import bg from '../../localizations/bg.json';
+import bg from '../localizations/bg.json';
 import AppModel from '../models/AppModel';
 
 class LanguageManager
