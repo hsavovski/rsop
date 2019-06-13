@@ -44,6 +44,16 @@ app.use('/admin/async', adminAsync);
 app.use('/admin', express.static('assets/admin'));
 
 // Static routing
+// app.get('/', function (req, res, next) {
+//   fs.readFile('/file-does-not-exist', function (err, data) {
+//     if (err) {
+//       next(err) // Pass errors to Express.
+//     } else {
+//       res.send(data)
+//     }
+//   })
+// })
+
 
 app.get('/admin*', function(req, res){
     res.sendFile(path.join(__dirname, '/assets/admin/admin.html'));

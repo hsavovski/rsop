@@ -33,6 +33,7 @@ export default class Problems extends Component
 
     render() {
         let competitions = Model['competitions'];
+        
         return (
 			<div>
                 <Row>
@@ -51,18 +52,25 @@ export default class Problems extends Component
                             {
                                 title: this.trans('text'),
                                 dataIndex: 'text',
-                                render:(text)=>(<div>
-                                    {text}
-                                </div>),
+                                render:(text,element)=>
+                                    (<a 
+                                        href={'/files/text-' + element.id + '.pdf'}
+                                        target='_blank'
+                                        >
+                                        {text}
+                                    </a>),
                                 editable: true,
                                 required: true,
                             },
                             {
                                 title: this.trans('tests'),
                                 dataIndex: 'tests',
-                                render:(text)=>(<div>
+                                render:(text,element)=>(<a
+                                    href={'/files/tests-' + element.id + '.pdf'}
+                                    target='_blank'
+                                    >
                                     {text}
-                                </div>),
+                                </a>),
                                 editable: true,
                                 required: false,
                             },
@@ -87,9 +95,12 @@ export default class Problems extends Component
                             {
                                 title: this.trans('solution'),
                                 dataIndex: 'solution',
-                                render:(text)=>(<div>
+                                render:(text,element)=>(<a
+                                    href={'/files/solution-' + element.id + '.pdf'}
+                                    target='_blank'
+                                    >
                                     {text}
-                                </div>),
+                                </a>),
                                 editable: true,
                                 required: true,
                             }

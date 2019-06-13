@@ -50,12 +50,13 @@ export default class Universities extends Component
     {
         let competitions = Model['competitions'];
         let universities = Model['universities'];
-
+        let teams = Model['teams'];
+        
         let result = [];
         if(
             Object.keys(universities).length > 1 && 
-            Object.keys(competitions).length > 1 && 
-            Object.keys(Model['teams']).length > 1
+            Object.keys(competitions).length > 0 && 
+            Object.keys(teams).length > 1
             )
         {
             let ranking = {};
@@ -89,8 +90,7 @@ export default class Universities extends Component
 
 
     render() {
-        
-
+    
         return (
 			<div>
                 <Row>
@@ -172,7 +172,7 @@ export default class Universities extends Component
                         data={this.data}
                         onRow={(record, index, event) => {
                         }}
-                        expandedRowRender={this.expand}
+                        // expandedRowRender={this.expand}
                     >
                     </SearchTable>
                 </Row>

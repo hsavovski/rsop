@@ -59,8 +59,10 @@ export default class Problems extends Component
                             {
                                 title: this.trans('text'),
                                 dataIndex: 'text',
-                                render:(text)=>(<div>
-                                    {text}
+                                render:(text, record)=>(<div>
+                                    <a href={'/files/text-' + record.id + '.pdf'}>
+                                        {text}
+                                    </a>
                                 </div>),
                                 editable: true,
                                 required: true,
@@ -68,8 +70,10 @@ export default class Problems extends Component
                             {
                                 title: this.trans('tests'),
                                 dataIndex: 'tests',
-                                render:(text)=>(<div>
-                                    {text}
+                                render:(text, record)=>(<div>
+                                    <a href={'/files/tests-' + record.id + '.pdf'}>
+                                        {text}
+                                    </a>
                                 </div>),
                                 editable: true,
                                 required: false,
@@ -77,7 +81,7 @@ export default class Problems extends Component
                             {
                                 title: this.trans('compilation_time'),
                                 dataIndex: 'compilationTime',
-                                render:(text)=>(<div>
+                                render:(text, record)=>(<div>
                                     {text}
                                 </div>),
                                 editable: true,
@@ -95,8 +99,10 @@ export default class Problems extends Component
                             {
                                 title: this.trans('solution'),
                                 dataIndex: 'solution',
-                                render:(text)=>(<div>
-                                    {text}
+                                render:(text, record)=>(<div>
+                                    <a href={'/files/solution-' + record.id + '.pdf'}>
+                                        {text}
+                                    </a>
                                 </div>),
                                 editable: true,
                                 required: true,

@@ -61,7 +61,6 @@ export default class Competition
         let teams = this.teams;
         let universities = Model['universities'];
         let result = {};
-        console.log('asdfasf')
         if(teams != null && universities != null)
         {
             for(let el in teams)

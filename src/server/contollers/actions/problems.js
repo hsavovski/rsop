@@ -58,11 +58,15 @@ problems.queries.create = (req,res) => {
             
             elements.id = result.insertId;
             ['text','tests','solution'].forEach(name =>{
-                let oldpath = '/temp/upload_' + name;
-                let newpath = '../../../../assets/public/files/' + name + '-' + elements.id;
-                fs.rename(oldpath, newpath, function (err) {
+                let oldpath = '/tmp/upload_' + name;
+                let newpath = './assets/public/files/' + name + '-' + elements.id + '.pdf';
+                fs.copyFile(oldpath, newpath, (err) => {
                     if (err) throw err;
-                    console.log(name + ' file renamed');
+                    fs.unlink(oldpath, (err) => {
+                        if (err) throw err;
+
+                        console.log('$olpath was moved to $newpath');
+                      });    
                 });
             });
 

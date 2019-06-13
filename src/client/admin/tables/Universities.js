@@ -47,15 +47,6 @@ export default class Universities extends Component
                                 required: true,
                             },
                             {
-                                title: this.trans('type'),
-                                dataIndex: 'type',
-                                render:(text)=>(<div>
-                                    {text}
-                                </div>),
-                                editable: true,
-                                required: false,
-                            },
-                            {
                                 title: this.trans('abbreviation'),
                                 dataIndex: 'abbreviation',
                                 render:(text)=>(<div>

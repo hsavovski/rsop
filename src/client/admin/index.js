@@ -67,6 +67,7 @@ ReactDOM.render(
                     <Route path="/admin/competitors" component={Competitors} />
                     <Route path="/admin/teachers" component={TeamLeaders} />
                     <Route path="/admin/problems" component={Problems} />
+
         </div>   
     </Router>,
     document.getElementById('admin-root')

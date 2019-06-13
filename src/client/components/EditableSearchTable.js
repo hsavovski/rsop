@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table , Input, InputNumber, Popconfirm, Form,} from 'antd';
+import {Icon, Table , Input, InputNumber, Popconfirm, Form,} from 'antd';
 import {Button , Row , Col} from 'antd'
 import {EditableCell, EditableFormRow, EditableContext} from './EditableComponents';
 import Model from '../models/CompetitionsModel';
@@ -39,7 +39,7 @@ export default class SearchTable extends Component
             {
                 title: trans('edit'),
                 dataIndex: 'operation',
-                width: '120px',
+                width: '145px',
                 render: (text, record) => {
                     const editable = this.isEditing(record);
                     
@@ -66,7 +66,7 @@ export default class SearchTable extends Component
                                 </a>
                         </span>
                         ) : (
-                        <a onClick={() => this.edit(record.id)}>{trans('edit')}</a>
+                        <a onClick={() => this.edit(record.id)}>{(<Icon type="edit" />)}</a>
                         )}
                     </div>
                     );

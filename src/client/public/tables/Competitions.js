@@ -105,7 +105,9 @@ export default class Competitions extends Component
                                 title: this.trans('domain'),
                                 dataIndex: 'domain',
                                 render:(text)=>(<div>
-                                    {text}
+                                    <a href={text}>
+                                        {text}
+                                    </a>
                                 </div>),
                                 editable: true,
                                 required: true,

@@ -73334,13 +73334,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd_es_row__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/es/row */ "./node_modules/antd/es/row/index.js");
 /* harmony import */ var antd_es_col_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/es/col/style/css */ "./node_modules/antd/es/col/style/css.js");
 /* harmony import */ var antd_es_col__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! antd/es/col */ "./node_modules/antd/es/col/index.js");
-/* harmony import */ var antd_es_input_style_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! antd/es/input/style/css */ "./node_modules/antd/es/input/style/css.js");
-/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! antd/es/input */ "./node_modules/antd/es/input/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _EditableComponents__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./EditableComponents */ "./src/client/components/EditableComponents.js");
-/* harmony import */ var _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../models/CompetitionsModel */ "./src/client/models/CompetitionsModel.js");
-/* harmony import */ var _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../controllers/LanguageManager */ "./src/client/controllers/LanguageManager.js");
+/* harmony import */ var antd_es_icon_style_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! antd/es/icon/style/css */ "./node_modules/antd/es/icon/style/css.js");
+/* harmony import */ var antd_es_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! antd/es/icon */ "./node_modules/antd/es/icon/index.js");
+/* harmony import */ var antd_es_input_style_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! antd/es/input/style/css */ "./node_modules/antd/es/input/style/css.js");
+/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! antd/es/input */ "./node_modules/antd/es/input/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _EditableComponents__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./EditableComponents */ "./src/client/components/EditableComponents.js");
+/* harmony import */ var _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../models/CompetitionsModel */ "./src/client/models/CompetitionsModel.js");
+/* harmony import */ var _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../controllers/LanguageManager */ "./src/client/controllers/LanguageManager.js");
+
+
 
 
 
@@ -73378,10 +73382,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-var Search = antd_es_input__WEBPACK_IMPORTED_MODULE_9__["default"].Search;
+var Search = antd_es_input__WEBPACK_IMPORTED_MODULE_11__["default"].Search;
 
 var trans = function trans(value) {
-  return _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_13__["default"].getValue(value);
+  return _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_15__["default"].getValue(value);
 };
 
 var SearchTable =
@@ -73420,12 +73424,12 @@ function (_Component) {
       _this.columns.push({
         title: trans('edit'),
         dataIndex: 'operation',
-        width: '120px',
+        width: '145px',
         render: function render(text, record) {
           var editable = _this.isEditing(record);
 
-          return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, editable ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_EditableComponents__WEBPACK_IMPORTED_MODULE_11__["EditableContext"].Consumer, null, function (form) {
-            return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
+          return react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement("div", null, editable ? react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(_EditableComponents__WEBPACK_IMPORTED_MODULE_13__["EditableContext"].Consumer, null, function (form) {
+            return react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement("a", {
               href: "javascript:;",
               onClick: function onClick() {
                 return _this.save(form, record.id);
@@ -73434,16 +73438,18 @@ function (_Component) {
                 marginRight: 8
               }
             }, trans('save'));
-          }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
+          }), react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement("a", {
             href: "javascript:;",
             onClick: function onClick() {
               return _this.cancel();
             }
-          }, trans('cancel'))) : react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
+          }, trans('cancel'))) : react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement("a", {
             onClick: function onClick() {
               return _this.edit(record.id);
             }
-          }, trans('edit')));
+          }, react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            type: "edit"
+          })));
         }
       });
     }
@@ -73455,13 +73461,13 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var prop = this.props.entityName;
-      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_12__["default"].on(prop, this.handleList);
+      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_14__["default"].on(prop, this.handleList);
     }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       var prop = this.props.entityName;
-      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_12__["default"].removeListener(prop, this.handleList);
+      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_14__["default"].removeListener(prop, this.handleList);
     }
   }, {
     key: "handleList",
@@ -73514,8 +73520,8 @@ function (_Component) {
       var offset = 0;
       var components = {
         body: {
-          row: _EditableComponents__WEBPACK_IMPORTED_MODULE_11__["EditableFormRow"],
-          cell: _EditableComponents__WEBPACK_IMPORTED_MODULE_11__["EditableCell"]
+          row: _EditableComponents__WEBPACK_IMPORTED_MODULE_13__["EditableFormRow"],
+          cell: _EditableComponents__WEBPACK_IMPORTED_MODULE_13__["EditableCell"]
         }
       };
       var columns = this.columns.map(function (col) {
@@ -73549,21 +73555,21 @@ function (_Component) {
         data.reverse();
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_row__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_row__WEBPACK_IMPORTED_MODULE_5__["default"], {
         style: {
           marginBottom: "10px"
         }
-      }, this.props.searchRow, this.props.children && this.createForm, this.props.search && react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, this.props.searchRow, this.props.children && this.createForm, this.props.search && react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_7__["default"], {
         span: 5,
         offset: offset
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Search, {
+      }, react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(Search, {
         placeholder: trans('search'),
         onSearch: function onSearch(value) {
           return _this3.setState({
             searchString: value
           });
         }
-      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_table__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }))), react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_table__WEBPACK_IMPORTED_MODULE_3__["default"], {
         components: components,
         loading: data.length == 0,
         rowKey: function rowKey(record) {
@@ -73583,7 +73589,7 @@ function (_Component) {
     get: function get() {
       var data = [];
       var prop = this.props.entityName;
-      var entities = _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_12__["default"][prop];
+      var entities = _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_14__["default"][prop];
       var theString = "";
 
       for (var id in entities) {
@@ -73610,9 +73616,9 @@ function (_Component) {
       var create = null;
 
       if (this.state.add) {
-        create = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        create = react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_7__["default"], {
           span: 10
-        }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           style: {
             marginBottom: "10px"
           },
@@ -73624,9 +73630,9 @@ function (_Component) {
           }
         }, trans('cancel')), this.props.children);
       } else {
-        create = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        create = react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_7__["default"], {
           span: 5
-        }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(antd_es_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_12___default.a.createElement(antd_es_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           icon: "plus",
           onClick: function onClick() {
             _this4.setState({
@@ -73641,7 +73647,7 @@ function (_Component) {
   }]);
 
   return SearchTable;
-}(react__WEBPACK_IMPORTED_MODULE_10__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_12__["Component"]);
 
 
 
@@ -73659,13 +73665,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchTable; });
 /* harmony import */ var antd_es_table_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/table/style/css */ "./node_modules/antd/es/table/style/css.js");
 /* harmony import */ var antd_es_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/table */ "./node_modules/antd/es/table/index.js");
-/* harmony import */ var antd_es_input_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/input/style/css */ "./node_modules/antd/es/input/style/css.js");
-/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/input */ "./node_modules/antd/es/input/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _EditableComponents__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EditableComponents */ "./src/client/components/EditableComponents.js");
-/* harmony import */ var _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../models/CompetitionsModel */ "./src/client/models/CompetitionsModel.js");
-/* harmony import */ var _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../controllers/LanguageManager */ "./src/client/controllers/LanguageManager.js");
+/* harmony import */ var antd_es_icon_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/icon/style/css */ "./node_modules/antd/es/icon/style/css.js");
+/* harmony import */ var antd_es_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/icon */ "./node_modules/antd/es/icon/index.js");
+/* harmony import */ var antd_es_input_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/es/input/style/css */ "./node_modules/antd/es/input/style/css.js");
+/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/es/input */ "./node_modules/antd/es/input/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _EditableComponents__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./EditableComponents */ "./src/client/components/EditableComponents.js");
+/* harmony import */ var _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../models/CompetitionsModel */ "./src/client/models/CompetitionsModel.js");
+/* harmony import */ var _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../controllers/LanguageManager */ "./src/client/controllers/LanguageManager.js");
+
+
 
 
 
@@ -73697,10 +73707,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-var Search = antd_es_input__WEBPACK_IMPORTED_MODULE_3__["default"].Search;
+var Search = antd_es_input__WEBPACK_IMPORTED_MODULE_5__["default"].Search;
 
 var trans = function trans(value) {
-  return _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_7__["default"].getValue(value);
+  return _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_9__["default"].getValue(value);
 };
 
 var SearchTable =
@@ -73733,7 +73743,7 @@ function (_Component) {
 
     if (props.editable) {
       _this.columns.push({
-        title: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("a", {
+        title: react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
           onClick: _this.addRecord
         }, trans('add')),
         dataIndex: 'operation',
@@ -73741,8 +73751,8 @@ function (_Component) {
         render: function render(text, record) {
           var editable = _this.isEditing(record);
 
-          return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", null, editable ? react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_EditableComponents__WEBPACK_IMPORTED_MODULE_5__["EditableContext"].Consumer, null, function (form) {
-            return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("a", {
+          return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", null, editable ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_EditableComponents__WEBPACK_IMPORTED_MODULE_7__["EditableContext"].Consumer, null, function (form) {
+            return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
               href: "javascript:;",
               onClick: function onClick() {
                 return _this.save(form, record.id);
@@ -73751,16 +73761,18 @@ function (_Component) {
                 marginRight: 8
               }
             }, trans('save'));
-          }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("a", {
+          }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
             href: "javascript:;",
             onClick: function onClick() {
               return _this.cancel();
             }
-          }, trans('cancel'))) : react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("a", {
+          }, trans('cancel'))) : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
             onClick: function onClick() {
               return _this.edit(record.id);
             }
-          }, trans('edit')));
+          }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            type: "edit"
+          })));
         }
       });
     }
@@ -73781,8 +73793,8 @@ function (_Component) {
     value: function addRecord() {
       var entity = this.props.entityName.substr(0, this.props.entityName.length - 1);
       console.log(entity);
-      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_6__["default"]['addRecord'][entity] = this.props.parentId;
-      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_6__["default"].emit('addRecord');
+      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_8__["default"]['addRecord'][entity] = this.props.parentId;
+      _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_8__["default"].emit('addRecord');
     }
   }, {
     key: "isEditing",
@@ -73825,8 +73837,8 @@ function (_Component) {
 
       var components = {
         body: {
-          row: _EditableComponents__WEBPACK_IMPORTED_MODULE_5__["EditableFormRow"],
-          cell: _EditableComponents__WEBPACK_IMPORTED_MODULE_5__["EditableCell"]
+          row: _EditableComponents__WEBPACK_IMPORTED_MODULE_7__["EditableFormRow"],
+          cell: _EditableComponents__WEBPACK_IMPORTED_MODULE_7__["EditableCell"]
         }
       };
       var columns = this.columns.map(function (col) {
@@ -73852,7 +73864,7 @@ function (_Component) {
         this.props.data.reverse();
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_table__WEBPACK_IMPORTED_MODULE_1__["default"], _defineProperty({
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(antd_es_table__WEBPACK_IMPORTED_MODULE_1__["default"], _defineProperty({
         components: components,
         loading: false,
         rowKey: function rowKey(record) {
@@ -73871,7 +73883,7 @@ function (_Component) {
   }]);
 
   return SearchTable;
-}(react__WEBPACK_IMPORTED_MODULE_4__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
 
 
@@ -75986,10 +75998,10 @@ function (_BaseRequest) {
 /*!******************************************!*\
   !*** ./src/client/localizations/bg.json ***!
   \******************************************/
-/*! exports provided: split, merge, area, type, types, name, address, date, revenue_pl, categories, category, premises, premises_pl, shop, shops, company, companies, add, home, search, bulstat, mol, email, input_search_text, add_shop, user, users, delete, enabled, enable, disabled, disable, select_shop, select_date, select_type, percent, price, create, cancel, password, confirm_password, username, please_select, from, to, new_date, new_area, sum_of_areas, add_field, submit, add_monthly_revenue, amount, enter_amount_lv, enter_amount_st, position, phone_number, lv, st, enter_name, enter_position, enter_address, enter_bulstat, enter_mol, enter_email, enter_area, enter_phone_number, loading_occupations, loading_premises, loading_premises_areas, BGN, please_select_time, please_select_shop, inconsistent_passwords, confirm, please_input_password, please_confirm_password, add_categories, id, filters, change_password, change, month, rent, revenue, revenue_price, total, references, occupations, contracts, premises_name, company_name, default */
+/*! exports provided: save, edit, abbreviation, team_name, university_name, place, team_leader, score, solved_problems, host, year, domain, universities_count, city, participations, first, second, third, fourth, universities, university, years, text, tests, compilation_time, competition, solution, split, merge, area, type, types, name, address, date, revenue_pl, categories, category, premises, premises_pl, shop, shops, company, companies, add, home, search, bulstat, mol, email, input_search_text, add_shop, user, users, delete, enabled, enable, disabled, disable, select_shop, select_date, select_type, percent, price, create, cancel, password, confirm_password, username, please_select, from, to, new_date, new_area, sum_of_areas, add_field, submit, add_monthly_revenue, amount, enter_amount_lv, enter_amount_st, position, phone_number, lv, st, enter_name, enter_position, enter_address, enter_bulstat, enter_mol, enter_email, enter_area, enter_phone_number, loading_occupations, loading_premises, loading_premises_areas, BGN, please_select_time, please_select_shop, inconsistent_passwords, confirm, please_input_password, please_confirm_password, add_categories, id, filters, change_password, change, month, rent, revenue, revenue_price, total, references, occupations, contracts, premises_name, company_name, default */
 /***/ (function(module) {
 
-module.exports = {"split":"Раздели","merge":"Обедини","area":"Площ","type":"Тип","types":"Типове","name":"Име","address":"Адрес","date":"Дата","revenue_pl":"Изпратени Обороти","categories":"Категории","category":"Категория","premises":"Помощение","premises_pl":"Помещения","shop":"Магазин","shops":"Магазини","company":"Компания","companies":"Компании","add":"Добави","home":"Начало","search":"Търсене","bulstat":"Булстат","mol":"Мол","email":"Имейл","input_search_text":"Търсене","add_shop":"Добави магазин","user":"Потребител","users":"Потребители","delete":"Изтрий","enabled":"Активен","enable":"Активирай","disabled":"Неактивен","disable":"Деактивирай","select_shop":"Избери магазин","select_date":"Избери дата","select_type":"Избери тип","percent":"Процент","price":"Цена","create":"Създай","cancel":"Отказ","password":"Парола","confirm_password":"Потвърди паролата","username":"Потребителско име","please_select":"Моля, изберете","from":"От","to":"До","new_date":"Нова дата","new_area":"Нова площ","sum_of_areas":"Сума от площите","add_field":"Добави поле","submit":"Изпрати","add_monthly_revenue":"Добави месечен оборот","amount":"Сума","enter_amount_lv":"Въведи лева","enter_amount_st":"Въведи стотинки","position":"Длъжност","phone_number":"Телефонен номер","lv":"лв","st":"ст","enter_name":"Въведи име","enter_position":"Въведи длъжност","enter_address":"Въведи адрес","enter_bulstat":"Въведи булстат","enter_mol":"Въведи мол","enter_email":"Въведи имейл","enter_area":"Въведи площ","enter_phone_number":"Въведи телефонен номер","loading_occupations":"Зареждане на магазини","loading_premises":"Зареждане на помещения","loading_premises_areas":"Зареждане на помещения","BGN":"Лева","please_select_time":"Избери дата","please_select_shop":"Избери магазин","inconsistent_passwords":"Паролите не съвпадат","confirm":"Потвърди","please_input_password":"Въведи парола","please_confirm_password":"Потвърди паролата","add_categories":"Добави категории","id":"#","filters":"Филтри","change_password":"Промяна на паролата","change":"Промени","month":"Месец","rent":"Наем","revenue":"Оборот","revenue_price":"Оборот сума","total":"Общо","references":"Справки","occupations":"Период на наем за помещения","contracts":"Договори","premises_name":"Име на помещение","company_name":"Име на компания"};
+module.exports = {"save":"Запази","edit":"Редактиране","abbreviation":"Съкращение","team_name":"Отбор","university_name":"Университет","place":"Място","team_leader":"Ръководител","score":"Резултат","solved_problems":"Решени задачи","host":"Домакин","year":"Година","domain":"Уебсайт","universities_count":"Брой университети","city":"Град","participations":"Участия","first":"Първи","second":"Втори","third":"Трети","fourth":"Четвърти","universities":"Университети","university":"Университет","years":"Години","text":"Условие","tests":"Тестови данни","compilation_time":"Време за компилация","competition":"Състезание","solution":"Решение","split":"Раздели","merge":"Обедини","area":"Площ","type":"Тип","types":"Типове","name":"Име","address":"Адрес","date":"Дата","revenue_pl":"Изпратени Обороти","categories":"Категории","category":"Категория","premises":"Помощение","premises_pl":"Помещения","shop":"Магазин","shops":"Магазини","company":"Компания","companies":"Компании","add":"Добави","home":"Начало","search":"Търсене","bulstat":"Булстат","mol":"Мол","email":"Имейл","input_search_text":"Търсене","add_shop":"Добави магазин","user":"Потребител","users":"Потребители","delete":"Изтрий","enabled":"Активен","enable":"Активирай","disabled":"Неактивен","disable":"Деактивирай","select_shop":"Избери магазин","select_date":"Избери дата","select_type":"Избери тип","percent":"Процент","price":"Цена","create":"Създай","cancel":"Отказ","password":"Парола","confirm_password":"Потвърди паролата","username":"Потребителско име","please_select":"Моля, изберете","from":"От","to":"До","new_date":"Нова дата","new_area":"Нова площ","sum_of_areas":"Сума от площите","add_field":"Добави поле","submit":"Изпрати","add_monthly_revenue":"Добави месечен оборот","amount":"Сума","enter_amount_lv":"Въведи лева","enter_amount_st":"Въведи стотинки","position":"Длъжност","phone_number":"Телефонен номер","lv":"лв","st":"ст","enter_name":"Въведи име","enter_position":"Въведи длъжност","enter_address":"Въведи адрес","enter_bulstat":"Въведи булстат","enter_mol":"Въведи мол","enter_email":"Въведи имейл","enter_area":"Въведи площ","enter_phone_number":"Въведи телефонен номер","loading_occupations":"Зареждане на магазини","loading_premises":"Зареждане на помещения","loading_premises_areas":"Зареждане на помещения","BGN":"Лева","please_select_time":"Избери дата","please_select_shop":"Избери магазин","inconsistent_passwords":"Паролите не съвпадат","confirm":"Потвърди","please_input_password":"Въведи парола","please_confirm_password":"Потвърди паролата","add_categories":"Добави категории","id":"#","filters":"Филтри","change_password":"Промяна на паролата","change":"Промени","month":"Месец","rent":"Наем","revenue":"Оборот","revenue_price":"Оборот сума","total":"Общо","references":"Справки","occupations":"Период на наем за помещения","contracts":"Договори","premises_name":"Име на помещение","company_name":"Име на компания"};
 
 /***/ }),
 
@@ -76390,7 +76402,6 @@ function () {
       var teams = this.teams;
       var universities = _CompetitionsModel__WEBPACK_IMPORTED_MODULE_0__["default"]['universities'];
       var result = {};
-      console.log('asdfasf');
 
       if (teams != null && universities != null) {
         for (var el in teams) {
@@ -76796,6 +76807,138 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./src/client/public/Menu.js":
+/*!***********************************!*\
+  !*** ./src/client/public/Menu.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NavMenu; });
+/* harmony import */ var antd_es_menu_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/menu/style/css */ "./node_modules/antd/es/menu/style/css.js");
+/* harmony import */ var antd_es_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/menu */ "./node_modules/antd/es/menu/index.js");
+/* harmony import */ var antd_es_icon_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/icon/style/css */ "./node_modules/antd/es/icon/style/css.js");
+/* harmony import */ var antd_es_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/icon */ "./node_modules/antd/es/icon/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+
+
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var NavMenu =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(NavMenu, _Component);
+
+  function NavMenu() {
+    var _this;
+
+    _classCallCheck(this, NavMenu);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NavMenu).call(this));
+    var pathname = window.location.pathname.substr(1);
+    !pathname && (pathname = 'home');
+    _this.state = {
+      current: pathname
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(NavMenu, [{
+    key: "handleClick",
+    value: function handleClick(e) {
+      this.setState({
+        current: e.key
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onClick: this.handleClick,
+        selectedKeys: [this.state.current],
+        mode: "horizontal"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "home"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: "home"
+      }), "\u041D\u0430\u0447\u0430\u043B\u043E")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "competitions"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/competitions"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: "appstore"
+      }), "\u0421\u044A\u0441\u0442\u0435\u0437\u0430\u043D\u0438\u044F")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].SubMenu, {
+        title: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("span", {
+          className: "submenu-title-wrapper"
+        }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          type: "appstore"
+        }), "\u0423\u043D\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0438")
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "universities:1"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/universities"
+      }, "\u041A\u043B\u0430\u0441\u0438\u0440\u0430\u043D\u0435")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "universities:2"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/university-list"
+      }, "\u0421\u043F\u0438\u0441\u044A\u043A \u0441 \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0438"))), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "competitors"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/competitors"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: "appstore"
+      }), "\u0421\u044A\u0441\u0442\u0435\u0437\u0430\u0442\u0435\u043B\u0438")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "teachers"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/teachers"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: "appstore"
+      }), "\u041F\u0440\u0435\u043F\u043E\u0434\u0430\u0432\u0430\u0442\u0435\u043B\u0438")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
+        key: "problems"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        to: "/problems"
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: "appstore"
+      }), " \u0417\u0430\u0434\u0430\u0447\u0438"))));
+    }
+  }]);
+
+  return NavMenu;
+}(react__WEBPACK_IMPORTED_MODULE_4__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./src/client/public/index.js":
 /*!************************************!*\
   !*** ./src/client/public/index.js ***!
@@ -76805,21 +76948,19 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var antd_es_menu_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/menu/style/css */ "./node_modules/antd/es/menu/style/css.js");
-/* harmony import */ var antd_es_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/menu */ "./node_modules/antd/es/menu/index.js");
-/* harmony import */ var antd_es_icon_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/icon/style/css */ "./node_modules/antd/es/icon/style/css.js");
-/* harmony import */ var antd_es_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/icon */ "./node_modules/antd/es/icon/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Home */ "./src/client/public/Home.js");
-/* harmony import */ var _tables_Competitions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./tables/Competitions */ "./src/client/public/tables/Competitions.js");
-/* harmony import */ var _tables_Universities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tables/Universities */ "./src/client/public/tables/Universities.js");
-/* harmony import */ var _tables_Competitors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tables/Competitors */ "./src/client/public/tables/Competitors.js");
-/* harmony import */ var _tables_TeamLeaders__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tables/TeamLeaders */ "./src/client/public/tables/TeamLeaders.js");
-/* harmony import */ var _tables_Problems__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./tables/Problems */ "./src/client/public/tables/Problems.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Home */ "./src/client/public/Home.js");
+/* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Menu */ "./src/client/public/Menu.js");
+/* harmony import */ var _tables_Competitions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tables/Competitions */ "./src/client/public/tables/Competitions.js");
+/* harmony import */ var _tables_Universities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tables/Universities */ "./src/client/public/tables/Universities.js");
+/* harmony import */ var _tables_Competitors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tables/Competitors */ "./src/client/public/tables/Competitors.js");
+/* harmony import */ var _tables_TeamLeaders__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./tables/TeamLeaders */ "./src/client/public/tables/TeamLeaders.js");
+/* harmony import */ var _tables_Problems__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tables/Problems */ "./src/client/public/tables/Problems.js");
+/* harmony import */ var _tables_UniversitiesList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tables/UniversitiesList */ "./src/client/public/tables/UniversitiesList.js");
 
 
 
@@ -76831,69 +76972,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-react_dom__WEBPACK_IMPORTED_MODULE_5___default.a.render(react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   className: "bodyWrap"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  mode: "horizontal"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
-  key: "home"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-  to: "/"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  type: "home"
-}), "\u041D\u0430\u0447\u0430\u043B\u043E")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
-  key: "competitions"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-  to: "/competitions"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  type: "appstore"
-}), "\u0421\u044A\u0441\u0442\u0435\u0437\u0430\u043D\u0438\u044F")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
-  key: "universities"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-  to: "/universities"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  type: "appstore"
-}), "\u0423\u043D\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0438")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
-  key: "competitors"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-  to: "/competitors"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  type: "appstore"
-}), "\u0421\u044A\u0441\u0442\u0435\u0437\u0430\u0442\u0435\u043B\u0438")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
-  key: "teachers"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-  to: "/teachers"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  type: "appstore"
-}), "\u041F\u0440\u0435\u043F\u043E\u0434\u0430\u0432\u0430\u0442\u0435\u043B\u0438")), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_menu__WEBPACK_IMPORTED_MODULE_1__["default"].Item, {
-  key: "problems"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-  to: "/problems"
-}, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_es_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  type: "appstore"
-}), " \u0417\u0430\u0434\u0430\u0447\u0438"))), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "top-box"
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "round-rect"
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "react"
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   className: "gap"
-}), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "small_gap"
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   exact: true,
   path: "/",
-  component: _Home__WEBPACK_IMPORTED_MODULE_7__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+  component: _Home__WEBPACK_IMPORTED_MODULE_3__["default"]
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/competitions",
-  component: _tables_Competitions__WEBPACK_IMPORTED_MODULE_8__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+  component: _tables_Competitions__WEBPACK_IMPORTED_MODULE_5__["default"]
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/universities",
-  component: _tables_Universities__WEBPACK_IMPORTED_MODULE_9__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+  component: _tables_Universities__WEBPACK_IMPORTED_MODULE_6__["default"]
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  path: "/university-list",
+  component: _tables_UniversitiesList__WEBPACK_IMPORTED_MODULE_10__["default"]
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/competitors",
-  component: _tables_Competitors__WEBPACK_IMPORTED_MODULE_10__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+  component: _tables_Competitors__WEBPACK_IMPORTED_MODULE_7__["default"]
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/teachers",
-  component: _tables_TeamLeaders__WEBPACK_IMPORTED_MODULE_11__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+  component: _tables_TeamLeaders__WEBPACK_IMPORTED_MODULE_8__["default"]
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/problems",
-  component: _tables_Problems__WEBPACK_IMPORTED_MODULE_12__["default"]
+  component: _tables_Problems__WEBPACK_IMPORTED_MODULE_9__["default"]
+}))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "bottom-box"
 }))), document.getElementById('public-root'));
 
 /***/ }),
@@ -77035,7 +77149,9 @@ function (_Component) {
           title: this.trans('domain'),
           dataIndex: 'domain',
           render: function render(text) {
-            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
+              href: text
+            }, text));
           },
           editable: true,
           required: true
@@ -77395,16 +77511,22 @@ function (_Component) {
         }, {
           title: this.trans('text'),
           dataIndex: 'text',
-          render: function render(text) {
-            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+          render: function render(text, element) {
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
+              href: '/files/text-' + element.id + '.pdf',
+              target: "_blank"
+            }, text);
           },
           editable: true,
           required: true
         }, {
           title: this.trans('tests'),
           dataIndex: 'tests',
-          render: function render(text) {
-            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+          render: function render(text, element) {
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
+              href: '/files/tests-' + element.id + '.pdf',
+              target: "_blank"
+            }, text);
           },
           editable: true,
           required: false
@@ -77427,8 +77549,11 @@ function (_Component) {
         }, {
           title: this.trans('solution'),
           dataIndex: 'solution',
-          render: function render(text) {
-            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+          render: function render(text, element) {
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
+              href: '/files/solution-' + element.id + '.pdf',
+              target: "_blank"
+            }, text);
           },
           editable: true,
           required: true
@@ -77585,7 +77710,7 @@ function (_Component) {
       var teamLeaders = _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['teamLeaders'];
       var result = [];
 
-      if (Object.keys(_models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['universities']).length > 1 && Object.keys(_models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['competitions']).length > 1 && Object.keys(teamLeaders).length > 1 && Object.keys(teams).length > 1) {
+      if (Object.keys(_models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['universities']).length > 1 && Object.keys(_models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['competitions']).length > 0 && Object.keys(teamLeaders).length > 1 && Object.keys(teams).length > 1) {
         for (var el in teamLeaders) {
           var participations = 0;
           var universities = [];
@@ -77977,8 +78102,8 @@ function (_Component) {
         entityName: "universities",
         search: true,
         data: this.data,
-        onRow: function onRow(record, index, event) {},
-        expandedRowRender: this.expand
+        onRow: function onRow(record, index, event) {} // expandedRowRender={this.expand}
+
       })));
     }
   }, {
@@ -77986,9 +78111,10 @@ function (_Component) {
     get: function get() {
       var competitions = _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['competitions'];
       var universities = _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['universities'];
+      var teams = _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['teams'];
       var result = [];
 
-      if (Object.keys(universities).length > 1 && Object.keys(competitions).length > 1 && Object.keys(_models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__["default"]['teams']).length > 1) {
+      if (Object.keys(universities).length > 1 && Object.keys(competitions).length > 0 && Object.keys(teams).length > 1) {
         var ranking = {};
 
         for (var el in competitions) {
@@ -78027,6 +78153,108 @@ function (_Component) {
       }
 
       return result;
+    }
+  }]);
+
+  return Universities;
+}(react__WEBPACK_IMPORTED_MODULE_2__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./src/client/public/tables/UniversitiesList.js":
+/*!******************************************************!*\
+  !*** ./src/client/public/tables/UniversitiesList.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Universities; });
+/* harmony import */ var antd_es_row_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/row/style/css */ "./node_modules/antd/es/row/style/css.js");
+/* harmony import */ var antd_es_row__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/row */ "./node_modules/antd/es/row/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_EditableSearchTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/EditableSearchTable */ "./src/client/components/EditableSearchTable.js");
+/* harmony import */ var _models_CompetitionsModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../models/CompetitionsModel */ "./src/client/models/CompetitionsModel.js");
+/* harmony import */ var _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../controllers/LanguageManager */ "./src/client/controllers/LanguageManager.js");
+
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Universities =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Universities, _Component);
+
+  function Universities() {
+    _classCallCheck(this, Universities);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Universities).call(this));
+  }
+
+  _createClass(Universities, [{
+    key: "trans",
+    value: function trans(word) {
+      return _controllers_LanguageManager__WEBPACK_IMPORTED_MODULE_5__["default"].getValue(word);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(antd_es_row__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_EditableSearchTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        columns: [{
+          title: this.trans('name'),
+          dataIndex: 'name',
+          render: function render(text) {
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+          },
+          editable: true,
+          required: true
+        }, {
+          title: this.trans('city'),
+          dataIndex: 'city',
+          render: function render(text) {
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+          },
+          editable: true,
+          required: true
+        }, {
+          title: this.trans('abbreviation'),
+          dataIndex: 'abbreviation',
+          render: function render(text) {
+            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, text);
+          },
+          editable: true,
+          required: true
+        }],
+        entityName: "universities",
+        search: true,
+        onRow: function onRow(record, index, event) {}
+      })));
     }
   }]);
 

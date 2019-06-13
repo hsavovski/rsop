@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 var BUILD_DIR = path.resolve(__dirname, 'assets');
 var APP_DIR = path.resolve(__dirname, 'src');
@@ -49,7 +50,10 @@ var config = {
                 loader: "babel-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        // new BundleAnalyzerPlugin()
+    ],
 };
 
 module.exports = config;

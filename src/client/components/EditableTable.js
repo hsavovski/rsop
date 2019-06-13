@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table , Input, Modal} from 'antd';
+import {Icon, Table , Input, Modal} from 'antd';
 import {Button , Row , Col} from 'antd'
 import {EditableCell, EditableFormRow, EditableContext} from './EditableComponents';
 import Model from '../models/CompetitionsModel';
@@ -68,7 +68,7 @@ export default class SearchTable extends Component
                                 </a>
                         </span>
                         ) : (
-                        <a onClick={() => this.edit(record.id)}>{trans('edit')}</a>
+                        <a onClick={() => this.edit(record.id)}>{<Icon type="edit" />}</a>
                         )}
                     </div>
                     );

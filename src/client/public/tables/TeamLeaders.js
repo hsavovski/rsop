@@ -40,7 +40,7 @@ export default class TeamLeaders extends Component
         let result = [];
         if(
             Object.keys(Model['universities']).length > 1 && 
-            Object.keys(Model['competitions']).length > 1 && 
+            Object.keys(Model['competitions']).length > 0 && 
             Object.keys(teamLeaders).length > 1 && 
             Object.keys(teams).length > 1
             )
