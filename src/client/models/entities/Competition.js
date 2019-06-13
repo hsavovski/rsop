@@ -61,7 +61,7 @@ export default class Competition
         let teams = this.teams;
         let universities = Model['universities'];
         let result = {};
-        
+        console.log('asdfasf')
         if(teams != null && universities != null)
         {
             for(let el in teams)
@@ -72,6 +72,33 @@ export default class Competition
                     result[uniId] = universities[uniId];
                 }
             }
+        }
+
+        return result;
+    }
+
+    get universityRanking()
+    {
+        let universities = this.universities;
+        let ranking = [];
+        for(let el in universities)
+        {
+            ranking.push(universities[el].bestTeamInCompetition(this.id))
+        }
+
+        ranking.sort((a,b) =>{
+            if(a.solvedProblems != b.solvedProblems){
+                return b.solvedProblems - a.solvedProblems
+            }
+            else
+            {
+                return b.score - a.score
+            }
+        });
+        let result = {};
+        for(let i=0; i < ranking.length; i++)
+        {
+            result[i + 1] = ranking[i].universityId; 
         }
 
         return result;

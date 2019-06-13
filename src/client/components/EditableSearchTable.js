@@ -132,7 +132,7 @@ export default class SearchTable extends Component
                 }
             }
         }
-
+        
         return data;
     }
 

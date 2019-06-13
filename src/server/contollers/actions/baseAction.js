@@ -35,11 +35,10 @@ module.exports = function()
             var query =
                 "SELECT * "
                 + "from " + this.table
-                + " where id = " + req.params.id + " "
-                + ";";
+                + " where id = ? ;";
                 
             console.log(query);
-            AppModel.connection.query( query,
+            AppModel.connection.query( query,[req.params.id],
                 function(err, result)
                 {
                     if(err)
@@ -53,22 +52,24 @@ module.exports = function()
         create:(req, res) => {
             var elements = req.body;
 
-            let input = "";
+            let input = [];
+            placeholders = '';
             let columns = "";
             this.columns.forEach(el =>{
                 if(elements[el] != null)
                 {
-                    input += "'" + elements[el] + "',"
-                    columns += "`" + el + "`,"
+                    input.push(elements[el]);
+                    placeholders += " ? ,"
+                    columns += "`" + el + "`,";
                 }
                 else{
 
                 }
             })
             
-            if(input[input.length-1] == ",")
+            if(placeholders[placeholders.length-1] == ",")
             {
-                input = input.slice(0,input.length-1);
+                placeholders = placeholders.slice(0,placeholders.length-1);
             }
 
             if(columns[columns.length-1] == ",")
@@ -80,12 +81,12 @@ module.exports = function()
                 "INSERT INTO " + this.table
                 + " (" + columns + ") "
                 + "VALUES ( "
-                + input
+                + placeholders
                 + ");";
 
-            console.log(query);
+            console.log(query , input);
 
-            AppModel.connection.query( query,
+            AppModel.connection.query( query, input,
                 function(err, result)
                 {
                     if(err)
@@ -112,12 +113,13 @@ module.exports = function()
             var query = 
             "UPDATE " + this.table 
             + " SET";
-        
+            let input = [];
             this.columns.forEach((name) => 
             {
                 if(body[name] != null)
                 {
-                    query += " `" + name + "` = '" + body[name] + "'," 
+                    query += " `" + name + "` =  ? ," 
+                    input.push(body[name])
                 }
             });
 
@@ -130,10 +132,11 @@ module.exports = function()
                 res.json({error:"no_values"})
             }
 
-            query = query + " WHERE `id` = " + req.params.id;
+            query = query + " WHERE `id` = ? ;";
+            input.push(req.params.id);
 
-            console.log(query);
-            AppModel.connection.query( query,
+            console.log(query , input);
+            AppModel.connection.query( query, input,
                 function(err, result)
                 {
                     if(err)

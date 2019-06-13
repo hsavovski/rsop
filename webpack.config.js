@@ -8,6 +8,7 @@ var isProduction = process.env.NODE_ENV === 'production';
 var config = {
     mode: 'development',
     watch: true,
+    devtool: 'source-map',
     watchOptions: {
         ignored: /node_modules/,
         poll: true

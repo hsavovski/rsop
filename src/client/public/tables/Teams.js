@@ -17,16 +17,12 @@ export default class Teams extends Component
     }
 
     componentDidMount(){
-        Model.on('universities',this.handleChange);
         Model.on('teamLeaders',this.handleChange);
-        Model.on('teams',this.handleChange);
     }
 
 
     componentWillUnmount(){
-        Model.removeListener('universities',this.handleChange);
         Model.removeListener('teamLeaders',this.handleChange);
-        Model.removeListener('teams',this.handleChange);
     }
 
     handleChange(){
@@ -48,15 +44,23 @@ export default class Teams extends Component
         let entity = Model['teams'];
         for(let el in entity)
         {
-            if(entity[el].competitionId == this.props.competitionId)
+            if(entity[el].universityId == this.props.universityId)
             data.push(entity[el]);
         }
         return data;
     }
 
     render() {
-        let universities = Model["universities"];
         let teamLeaders = Model['teamLeaders'];
+        let competitions = Model['competitions'];
+
+        console.log(teamLeaders , competitions)
+
+        if( Object.keys(competitions).length < 1 ||
+            Object.keys(teamLeaders).length < 1)
+        {
+            return (<div></div>)     
+        }
 
         return (
             <Table
@@ -81,10 +85,10 @@ export default class Teams extends Component
                         required: true,
                     },
                     {
-                        title: this.trans('university'),
-                        dataIndex: 'universityId',
+                        title: this.trans('competition'),
+                        dataIndex: 'competitionId',
                         render:(text)=>(<div>
-                            {universities[text].name}
+                            {competitions[text].name}
                         </div>),
                         editable: false,
                         required: true,

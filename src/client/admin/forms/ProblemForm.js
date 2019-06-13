@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import { Form, Icon, Input, Button, Checkbox , InputNumber , Select} from 'antd';
+import { Form, message, Icon, Input, Button, Checkbox, InputNumber, Select, Upload} from 'antd';
 const Option = Select.Option;
 const {TextArea} = Input;
 const FormItem = Form.Item;
@@ -35,6 +35,14 @@ class ProblemForm  extends Component {
 
         this.props.form.validateFields((err, values) => {
             if (!err) {
+                values = {
+                    ...values,
+                    solution: values.solution.file.name,
+                    tests: values.tests.file.name,
+                    text: values.text.file.name
+                }
+                console.log(values);
+
                 this.action(values);
             }
         });
@@ -63,16 +71,46 @@ class ProblemForm  extends Component {
         var trans = (keyword)=>{
             return Translation.getValue(keyword);
         }
+
         const formItemLayout = {
             labelCol: {
-              xs: { span: 24 },
-              sm: { span: 8 },
+                xs: { span: 24 },
+                sm: { span: 8 },
             },
             wrapperCol: {
-              xs: { span: 24 },
-              sm: { span: 16 },
+                xs: { span: 24 },
+                sm: { span: 16 },
             },
-          };
+            };
+
+        let onChange = (info) => {
+            if (info.file.status !== 'uploading') {
+                console.log(info.file, info.fileList);
+            }
+            if (info.file.status === 'done') {
+                message.success(`${info.file.name} file uploaded successfully`);
+            } else if (info.file.status === 'error') {
+                message.error(`${info.file.name} file upload failed.`);
+            }
+        }
+        const uploadProps = {
+            text: {
+                name: 'text',
+                action: '/admin/async/problems/uploadTemp',
+                onChange,
+            },
+            tests: {
+                name: 'tests',
+                action: '/admin/async/problems/uploadTemp',
+                onChange,
+            },
+            solution: {
+                name: 'solution',
+                action: '/admin/async/problems/uploadTemp',
+                onChange,
+            }
+        };
+        
         const { getFieldDecorator } = this.props.form;
         return (
             <div>
@@ -89,35 +127,50 @@ class ProblemForm  extends Component {
                         </FormItem>
                         
                         <FormItem
-                            label={trans("text")}
+                            label={trans("text_upload")}
                             {...formItemLayout}
                         >
                             {getFieldDecorator('text', {
                                 rules: [{ required: true, message: "" }],
                             })(
-                                <TextArea rows={4} placeholder={trans("text")}/>
+                                <Upload {...uploadProps.text}>
+                                    <Button>
+                                        <Icon type="upload" /> 
+                                        {trans('upload')}
+                                    </Button>
+                                </Upload>
                             )}
                         </FormItem>
                         
                         <FormItem
-                            label={trans("tests")}
+                            label={trans("tests_upload")}
                             {...formItemLayout}
                         >
                             {getFieldDecorator('tests', {
                                 rules: [{ required: true, message: "" }],
                             })(
-                                <TextArea rows={4} placeholder={trans("tests")}/>
+                                <Upload {...uploadProps.tests}>
+                                    <Button>
+                                        <Icon type="upload" /> 
+                                        {trans('upload')}
+                                    </Button>
+                                </Upload>
                             )}
                         </FormItem>
 
                         <FormItem
-                            label={trans("solution")}
+                            label={trans("solution_upload")}
                             {...formItemLayout}
                         >
                             {getFieldDecorator('solution', {
                                 rules: [{ required: true, message: "" }],
                             })(
-                                <TextArea rows={4} placeholder={trans("solution")}/>
+                                <Upload {...uploadProps.solution}>
+                                    <Button>
+                                        <Icon type="upload" /> 
+                                        {trans('upload')}
+                                    </Button>
+                                </Upload>
                             )}
                         </FormItem>
                         

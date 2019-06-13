@@ -1,4 +1,5 @@
 import Model from '../CompetitionsModel';
+import Competitions from '../../controllers/requests/get/Competitions';
 
 export default class Univeristy
 {
@@ -67,4 +68,20 @@ export default class Univeristy
         return teamsInComp[result];
     }
     
+    get participations()
+    {
+        let teams = this.teams;
+        let competitions = {};
+        if(teams != null)
+        {
+            for(let el in teams)
+            {
+                let comp = teams[el].competitionId;
+                competitions[comp] = 1;
+            }
+        }
+
+        return Object.keys(competitions).length;
+    }
+
 }

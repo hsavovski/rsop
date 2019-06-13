@@ -57,6 +57,12 @@ router.route('/problems').post(problems.create);
 router.route('/problems/:id').patch(problems.update);
 // router.route('/problems/:id').delete(problems.delete);
 
+var upload = require('../../contollers/actions/upload');
+router.route('/problems/uploadTemp').post(upload.temp);
+router.route('/problems').post(upload.post);
+
+
+
 //-----------------------------------------------------------------------------
 //                                 TEAM LEADERS
 //-----------------------------------------------------------------------------
